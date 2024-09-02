@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductComponent } from '../product/product.component';
 
 @Component({
   selector: 'app-products-detail',
@@ -9,4 +11,10 @@ import { Component } from '@angular/core';
 })
 export class ProductsDetailComponent {
 
+  product: any = null;
+
+  constructor(private route: ActivatedRoute) {
+    const productId = Number(this.route.snapshot.paramMap.get('id'));
+    this.product = ProductComponent.products.find(product => product.id === productId);
+  }
 }

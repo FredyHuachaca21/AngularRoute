@@ -1,1 +1,25 @@
-<p>product works!</p>
+<div class="container">
+  <h2>Products List</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of getProducts(); track product.id) {
+        <tr>
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>
+            <a [routerLink]="['/product-detail', product.id]" class="btn btn-primary">View Details</a>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

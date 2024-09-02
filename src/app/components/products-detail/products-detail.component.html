@@ -1,1 +1,11 @@
-<p>products-detail works!</p>
+<div class="container">
+  <h2>Product Detail</h2>
+  @if (product) {
+    <p><strong>ID:</strong> {{ product.id }}</p>
+    <p><strong>Name:</strong> {{ product.name }}</p>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Price:</strong> ${{ product.price }}</p>
+  } @else {
+    <p>No product found.</p>
+  }
+</div>
